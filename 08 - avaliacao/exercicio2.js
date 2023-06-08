@@ -17,3 +17,22 @@
 
 const { gets, print } = require('./funcoes-auxiliares-ex2');
 
+const numero = gets();
+let numeroMaior = null;
+let numeroMenor = null;
+
+for(let i = 0; i < numero; i++){
+    const n = gets()
+   // print('for -> ' + n)
+    if(n % 2  === 0){
+        if(numeroMaior === null || n > numeroMaior){
+            numeroMaior = n;
+        }
+    }else{
+        if(numeroMenor === null || n < numeroMenor){
+            numeroMenor = n
+        }
+    }
+}
+print(numeroMaior);
+print(numeroMenor)
