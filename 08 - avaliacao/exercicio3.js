@@ -20,3 +20,25 @@
 //             2050.00
 
 const { gets, print } = require('./funcoes-auxiliares-ex3');
+
+const salarioBruto = gets();
+const adicionalBeneficio = gets();
+
+const calculoImposto = function(salarioBruto, percentual){
+    return salarioBruto * (percentual/100);
+}
+const salarioLiquido = function(){
+
+    if(salarioBruto <= 1100){
+        print(' < R$1100')
+        return(salarioBruto - calculoImposto(salarioBruto, 5)) + adicionalBeneficio;
+    }else if(salarioBruto > 1100 && salarioBruto <= 2500){
+        print('R$1100 ~ R$2500')
+        return(salarioBruto - calculoImposto(salarioBruto, 10)) + adicionalBeneficio;
+    }else{
+        print('> R$ 2500')
+        return(salarioBruto - calculoImposto(salarioBruto, 15)) + adicionalBeneficio ;
+    }
+}
+
+print(salarioLiquido())
