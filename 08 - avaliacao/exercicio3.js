@@ -28,7 +28,6 @@ const calculoImposto = function(salarioBruto, percentual){
     return salarioBruto * (percentual/100);
 }
 const salarioLiquido = function(){
-
     if(salarioBruto <= 1100){
         print(' < R$1100')
         return(salarioBruto - calculoImposto(salarioBruto, 5)) + adicionalBeneficio;
